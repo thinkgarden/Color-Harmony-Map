@@ -1,6 +1,6 @@
-# test-project
+# Simple Color harmony mapper
 
-> A Vue.js project
+> A simple color harmony map based on tinycolor library
 
 ## Build Setup
 
@@ -24,4 +24,7 @@ npm run unit
 npm test
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+### Todo
+
+- calculate color harmony with one-color 
+
