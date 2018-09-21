@@ -23,26 +23,46 @@
     <div id="harmonies">
       <Box v-for="item in colors" :key="item.id" :color="item.color"/>
     </div>
+    <SparkChart />
+    <LineChart :options="chartOptions" :series="series" />
     <HelloWorld msg="Simple Color Harmony Map"/>
   </div>
 </template>
 
 <script>
+import tinycolor from "tinycolor2";
 import HelloWorld from "./components/HelloWorld";
 import Box from "./components/Box";
-import tinycolor from "tinycolor2";
+import LineChart from "./components/Chart/Line";
+import SparkChart from "./components/Chart/Spark";
 export default {
   name: "App",
   components: {
     HelloWorld,
-    Box
+    Box,
+    LineChart,
+    SparkChart
   },
   data() {
     return {
       color: "red",
       colors: [],
       error: null,
-      selected: ""
+      selected: "",
+      chartOptions: {
+        chart: {
+          id: "vuechart-example"
+        },
+        xaxis: {
+          categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998]
+        }
+      },
+      series: [
+        {
+          name: "series-1",
+          data: [30, 40, 45, 50, 49, 60, 70, 91]
+        }
+      ]
     };
   },
   methods: {
